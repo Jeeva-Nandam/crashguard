@@ -1,0 +1,83 @@
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-2);
+}
+.feature-dot {
+  color: var(--acid);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--acid);
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0;
+  text-decoration: none;
+}
+.link-btn:hover { text-decoration: underline; }
+.link-btn:disabled { color: var(--text-3); cursor: not-allowed; text-decoration: none; }
+
+/* OTP Row */
+.otp-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 30px;
+}
+
+/* OTP Input Box */
+.otp-input {
+  width: 52px;
+  height: 60px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-1);
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Focus effect */
+.otp-input:focus {
+  border-color: var(--acid);
+  box-shadow: 0 0 0 2px rgba(0, 255, 150, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Filled box effect */
+.otp-input:not(:placeholder-shown) {
+  border-color: rgba(0, 255, 150, 0.4);
+}
+
+/* Remove number arrows */
+.otp-input::-webkit-outer-spin-button,
+.otp-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Footer */
+.otp-footer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-3);
+  margin-top: 10px;
+}

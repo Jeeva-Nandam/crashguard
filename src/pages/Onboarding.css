@@ -1,0 +1,146 @@
+@import './Login.css';
+
+.onboarding-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.onboarding-wrapper {
+  width: 100%;
+  max-width: 680px;
+  position: relative;
+  z-index: 1;
+}
+
+.onboarding-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.onboarding-header h1 {
+  font-size: 40px;
+  margin-top: 16px;
+}
+.onboarding-header p {
+  margin-top: 12px;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.onboarding-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ob-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ob-section h3 {
+  font-size: 15px;
+  color: var(--text-2);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.optional-tag {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  background: var(--surface-2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+.req { color: var(--ember); }
+
+/* Pill selector */
+.pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pill {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.pill:hover { border-color: var(--border-bright); color: var(--text-1); }
+.pill.active { background: var(--acid-dim); border-color: var(--acid); color: var(--acid); }
+
+/* Stage cards */
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.stage-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  cursor: pointer;
+  transition: var(--spring);
+  text-align: center;
+}
+.stage-card:hover { transform: translateY(-3px); border-color: var(--border-bright); }
+.stage-card.active { border-color: var(--acid); background: var(--acid-dim); }
+.stage-icon { font-size: 28px; }
+.stage-name { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text-1); }
+.stage-desc { font-size: 11px; color: var(--text-3); font-family: var(--font-mono); }
+
+/* Integrations */
+.integration-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.integration-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  opacity: 0.6;
+}
+.integration-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.integration-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+  font-family: var(--font-display);
+}
+.integration-desc {
+  font-size: 12px;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+}
+.integration-card .badge { margin-left: auto; }

@@ -1,0 +1,82 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-login-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.admin-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.14;
+  animation: float 8s ease-in-out infinite;
+}
+.admin-orb-1 {
+  width: 400px; height: 400px;
+  background: #ef4444;
+  top: -100px; right: -60px;
+}
+.admin-orb-2 {
+  width: 300px; height: 300px;
+  background: #f59e0b;
+  bottom: -80px; left: -60px;
+  animation-delay: 3s;
+}
+
+.admin-login-center {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+}
+
+.admin-login-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-login-icon {
+  font-size: 40px;
+  color: var(--ember);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.admin-login-card h2 {
+  font-size: 26px;
+  color: var(--text-1);
+  margin-bottom: 8px;
+}
+
+.admin-login-card > p {
+  font-size: 14px;
+  color: var(--text-3);
+  line-height: 1.6;
+}
+
+.admin-login-card .field {
+  text-align: left;
+}
+.admin-login-card .field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  font-family: var(--font-display);
+  margin-bottom: 8px;
+  display: block;
+}
