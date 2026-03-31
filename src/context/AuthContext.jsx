@@ -3,8 +3,11 @@ import axios from 'axios';
 
 const AuthContext = createContext(null);
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
-
+const rawApiUrl = import.meta.env.VITE_API_URL;
+const API_BASE_URL = rawApiUrl
+  ? rawApiUrl.replace(/\/+$/, '')
+  : '/api';
+console.log("API_BASE_URL IS", API_BASE_URL)
 // ── User API ──────────────────────────────────────────────────────────────────
 const API = axios.create({ baseURL: API_BASE_URL });
 
