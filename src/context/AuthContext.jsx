@@ -3,8 +3,10 @@ import axios from 'axios';
 
 const AuthContext = createContext(null);
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
+
 // ── User API ──────────────────────────────────────────────────────────────────
-const API = axios.create({ baseURL: '/api' });
+const API = axios.create({ baseURL: API_BASE_URL });
 
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem('access_token');
@@ -19,7 +21,7 @@ API.interceptors.response.use(
       const refresh = localStorage.getItem('refresh_token');
       if (refresh) {
         try {
-          const { data } = await axios.post('/api/auth/refresh', { refresh_token: refresh });
+          const { data } = await API.post('/auth/refresh', { refresh_token: refresh });
           localStorage.setItem('access_token', data.access_token);
           localStorage.setItem('refresh_token', data.refresh_token);
           error.config.headers.Authorization = `Bearer ${data.access_token}`;
@@ -36,7 +38,7 @@ API.interceptors.response.use(
 );
 
 // ── Admin API (separate token, separate storage) ──────────────────────────────
-const adminAPI = axios.create({ baseURL: '/api' });
+const adminAPI = axios.create({ baseURL: API_BASE_URL });
 
 adminAPI.interceptors.request.use((config) => {
   const token = localStorage.getItem('admin_token');

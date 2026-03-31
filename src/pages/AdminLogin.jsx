@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { adminAPI } from '../context/AuthContext';
 import { useToast } from '../components/Toast';
 import './Login.css';
 import './AdminLogin.css';
@@ -23,7 +23,7 @@ export default function AdminLogin() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post('/api/admin/login', form);
+      const { data } = await adminAPI.post('/admin/login', form);
       localStorage.setItem('admin_token', data.access_token);
       toast('Admin access granted.', 'success');
       nav('/admin/dashboard');
